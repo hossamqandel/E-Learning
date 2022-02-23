@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "50652352979",
+    "firebase_url": "https://edraak-a4a65-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "edraak-a4a65",
+    "storage_bucket": "edraak-a4a65.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:50652352979:android:1d2579cad11e9364b65f26",
+        "android_client_info": {
+          "package_name": "com.android.edraak"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "50652352979-76dkg8fg2go4ah4a0rescgk54jc4qj47.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.android.edraak",
+            "certificate_hash": "4c0e41390317eed097c2e9d1f324fc549d80293d"
+          }
+        },
+        {
+          "client_id": "50652352979-r3egbdrinotsefo84rq4apesieglfini.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJmrJcZNSf3HWh7yCZ01p02Jz5wW4oJI4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "50652352979-r3egbdrinotsefo84rq4apesieglfini.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

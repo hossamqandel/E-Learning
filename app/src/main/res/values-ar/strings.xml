@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ادراك</string>
+    <string name="edraak">ادراك</string>
+
+
+    <!--  Login Fragment  -->
+    <string name="e_mail">البريد الالكتروني</string>
+    <string name="password">كلمة المرور</string>
+    <string name="login">تسجيل دخول</string>
+    <string name="sign_up_as_an_Instructor">انشئ حساب كـ معلم</string>
+    <string name="sign_up_as_a_student">انشئ حساب كـ طالب</string>
+
+
+    <string name="full_name">الإسم بالكامل</string>
+    <string name="age">العمر</string>
+    <string name="native_language">اللغه الام</string>
+    <string name="phone_number">رقم الهاتف</string>
+    <string name="sign_up">انشاء الحساب</string>
+
+
+</resources>

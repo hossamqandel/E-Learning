@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragment.Authentication.Registration.Student.StudentFragment">
+
+
+    <EditText
+        android:id="@+id/ui_Student_FullName_ET"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_18sdp"
+        android:layout_marginTop="@dimen/_22sdp"
+        android:gravity="start"
+        android:hint="@string/full_name"
+        android:inputType="textPersonName"
+        android:maxLines="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/ui_Student_Age_ET"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:digits="0123456789"
+        android:gravity="start"
+        android:hint="@string/age"
+        android:inputType="phone"
+        android:maxLength="3"
+        android:maxLines="1"
+        app:layout_constraintStart_toStartOf="@+id/ui_Student_FullName_ET"
+        app:layout_constraintTop_toBottomOf="@+id/ui_Student_FullName_ET" />
+
+
+    <EditText
+        android:id="@+id/ui_Student_PhoneNumber_ET"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_22sdp"
+        android:digits="0123456789"
+        android:gravity="start"
+        android:hint="@string/phone_number"
+        android:inputType="phone"
+        android:maxLength="11"
+        android:maxLines="1"
+        app:layout_constraintEnd_toEndOf="@+id/ui_Student_FullName_ET"
+        app:layout_constraintStart_toStartOf="@+id/ui_Student_FullName_ET"
+        app:layout_constraintTop_toBottomOf="@id/ui_Student_Age_ET" />
+
+    <EditText
+        android:id="@+id/ui_Student_Email_ET"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_22sdp"
+        android:gravity="start"
+        android:hint="@string/e_mail"
+        android:inputType="textEmailAddress"
+        android:maxLines="1"
+        app:layout_constraintEnd_toEndOf="@+id/ui_Student_FullName_ET"
+        app:layout_constraintStart_toStartOf="@+id/ui_Student_FullName_ET"
+        app:layout_constraintTop_toBottomOf="@+id/ui_Student_PhoneNumber_ET" />
+
+    <EditText
+        android:id="@+id/ui_Student_Password_ET"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_22sdp"
+        android:gravity="start"
+        android:hint="@string/password"
+        android:inputType="textPersonName"
+        android:maxLines="1"
+        app:layout_constraintEnd_toEndOf="@+id/ui_Student_FullName_ET"
+        app:layout_constraintStart_toStartOf="@+id/ui_Student_FullName_ET"
+        app:layout_constraintTop_toBottomOf="@+id/ui_Student_Email_ET" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/ui_Student_Signup_BTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:backgroundTint="#3F51B5"
+        android:text="@string/sign_up"
+        app:layout_constraintEnd_toEndOf="@+id/ui_Student_Password_ET"
+        app:layout_constraintStart_toStartOf="@+id/ui_Student_Password_ET"
+        app:layout_constraintTop_toBottomOf="@+id/ui_Student_Password_ET" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

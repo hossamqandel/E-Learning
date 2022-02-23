@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragment.UserActivities.StudentActivities.StudentProfileFragment"
+    android:background="@color/grey">
+
+    <ImageView
+        android:id="@+id/ui_Profile_Board_IV"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_160sdp"
+        android:src="@drawable/profile_frame"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ui_Student_Profile_IV"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_100sdp"
+        android:layout_marginTop="120dp"
+        android:src="@drawable/ic_male_user"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ui_User_Greet_Message_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="32dp"
+        android:text="WELCOME,"
+        android:textColor="@color/profile_board"
+        android:textSize="@dimen/_20sdp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/ui_Student_Profile_IV"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ui_Student_Profile_IV" />
+
+    <TextView
+        android:id="@+id/ui_Student_NAME_TV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textSize="@dimen/_16sdp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/ui_User_Greet_Message_TV"
+        app:layout_constraintStart_toEndOf="@+id/ui_User_Greet_Message_TV"
+        app:layout_constraintTop_toTopOf="@+id/ui_User_Greet_Message_TV"
+        tools:text="Hossam" />
+
+    <ImageView
+        android:id="@+id/ui_Student_VERIFY_TV"
+        android:layout_width="@dimen/_12sdp"
+        android:layout_height="@dimen/_12sdp"
+        android:layout_marginStart="7dp"
+        tools:src="@drawable/verification"
+        app:layout_constraintBottom_toBottomOf="@+id/ui_Student_NAME_TV"
+        app:layout_constraintStart_toEndOf="@+id/ui_Student_NAME_TV"
+        app:layout_constraintTop_toTopOf="@+id/ui_Student_NAME_TV" />
+
+    <ImageView
+        android:id="@+id/ui_Email_IV"
+        android:layout_width="@dimen/_25sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="80dp"
+        android:src="@drawable/ic_email"
+        app:layout_constraintStart_toStartOf="@+id/ui_User_Greet_Message_TV"
+        app:layout_constraintTop_toBottomOf="@+id/ui_User_Greet_Message_TV" />
+
+    <TextView
+        android:id="@+id/ui_Student_EMAIL_TV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/ui_Email_IV"
+        app:layout_constraintStart_toEndOf="@+id/ui_Email_IV"
+        app:layout_constraintTop_toTopOf="@+id/ui_Email_IV"
+        tools:text="google@gmail.com" />
+
+    <ImageView
+        android:id="@+id/ui_Phone_IV"
+        android:layout_width="@dimen/_25sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_marginTop="26dp"
+        android:src="@drawable/ic_phone"
+        app:layout_constraintStart_toStartOf="@+id/ui_Email_IV"
+        app:layout_constraintTop_toBottomOf="@+id/ui_Email_IV" />
+
+    <TextView
+        android:id="@+id/ui_Student_PASSWORD_TV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/ui_Phone_IV"
+        app:layout_constraintStart_toStartOf="@+id/ui_Student_EMAIL_TV"
+        app:layout_constraintTop_toTopOf="@+id/ui_Phone_IV"
+        tools:text="01115849705" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
