@@ -12,20 +12,28 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
 import com.android.edraak.Manager.LoginManager;
+import com.android.edraak.Model.UserModel;
 import com.android.edraak.R;
 import com.android.edraak.databinding.FragmentInstructorProfileBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 
 public class InstructorProfileFragment extends Fragment {
 
     FragmentInstructorProfileBinding binding;
     NavController navController;
-    FirebaseAuth mAuth = FirebaseAuth.getInstance();
-    FirebaseUser mUser = mAuth.getCurrentUser();
-    String us = mUser.getUid();
+    DatabaseReference mDatabaseRef = FirebaseDatabase.getInstance().getReference();
+    FirebaseAuth mFireAuth = FirebaseAuth.getInstance();
+    FirebaseUser mFireUser = mFireAuth.getCurrentUser();
+    String mCurrentUser = mFireUser.getUid();
     LoginManager loginManager;
+    UserModel user;
     InstructorProfileManager instructorProfileManager = new InstructorProfileManager();
 
     public InstructorProfileFragment() {
@@ -47,10 +55,15 @@ public class InstructorProfileFragment extends Fragment {
         navController = Navigation.findNavController(view);
         loginManager = new LoginManager(getContext(), navController);
 
+        displayUserInfo();
+
         binding.uiProfileLOGOUTBTN.setOnClickListener(v -> {
             instructorProfileManager.logOutAndNavigateBackToLogin(loginManager);
             navController.navigate(R.id.action_instructorProfileFragment_to_loginFragment2);
         });
+
+        binding.uiInstructorCONTINUEBTN.setOnClickListener(v ->
+                navController.navigate(R.id.action_instructorProfileFragment_to_instructorCourseFragment));
 
     }
 
@@ -60,6 +73,35 @@ public class InstructorProfileFragment extends Fragment {
         binding = null;
     }
 
+
+    private void displayUserInfo(){
+        InstructorProfileManager profileManager = new InstructorProfileManager();
+//        UserModel user = profileManager.getUserDataFromFirebaseRealtime(userModel);
+
+        if (mCurrentUser == null){}
+
+        mDatabaseRef.child("users").child(mCurrentUser).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                user = snapshot.getValue(UserModel.class);
+
+                boolean isVerifyed = user.isVerified();
+                if (isVerifyed == true){ binding.uiInstructorVERIFYTV.setVisibility(View.VISIBLE); }
+                else if (isVerifyed != true){ binding.uiInstructorVERIFYTV.setVisibility(View.GONE); }
+
+                binding.uiInstructorNAMETV.setText(user.getFullName());
+                binding.uiInstructorEMAILTV.setText(user.getEmail());
+                binding.uiInstructorPHONENUMBERTV.setText(user.getPhoneNumber());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+    }
 
 
 

@@ -70,7 +70,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/ui_Instructor_NAME_TV"
         app:layout_constraintStart_toEndOf="@+id/ui_Instructor_NAME_TV"
         app:layout_constraintTop_toTopOf="@+id/ui_Instructor_NAME_TV"
-        tools:src="@drawable/verification" />
+        android:src="@drawable/verification" />
 
 
     <ImageView
@@ -105,7 +105,7 @@
         app:layout_constraintTop_toBottomOf="@+id/ui_Email_IV" />
 
     <TextView
-        android:id="@+id/ui_Instructor_PASSWORD_TV"
+        android:id="@+id/ui_Instructor_PHONENUMBER_TV"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textSize="20sp"
@@ -119,10 +119,10 @@
         android:id="@+id/ui_Instructor_CONTINUE_BTN"
         android:layout_width="@dimen/_150sdp"
         android:layout_height="wrap_content"
-        android:paddingVertical="@dimen/_10sdp"
         android:layout_marginBottom="32dp"
-        android:text="Continue"
         android:backgroundTint="@color/profile_board"
+        android:paddingVertical="@dimen/_10sdp"
+        android:text="Continue"
         app:cornerRadius="@dimen/_20sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

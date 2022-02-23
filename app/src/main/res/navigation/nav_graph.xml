@@ -52,6 +52,9 @@
         <action
             android:id="@+id/action_instructorProfileFragment_to_loginFragment2"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_instructorProfileFragment_to_instructorCourseFragment"
+            app:destination="@id/instructorCourseFragment" />
     </fragment>
     <fragment
         android:id="@+id/studentProfileFragment"
@@ -74,4 +77,9 @@
             android:id="@+id/action_registrationFragment_to_studentProfileFragment"
             app:destination="@id/studentProfileFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/instructorCourseFragment"
+        android:name="com.android.edraak.Fragment.UserActivities.InstructorActivities.InstructorCourse.InstructorCourseFragment"
+        android:label="fragment_instructor_course"
+        tools:layout="@layout/fragment_instructor_course" />
 </navigation>
