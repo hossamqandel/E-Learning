@@ -79,7 +79,16 @@
     </fragment>
     <fragment
         android:id="@+id/instructorCourseFragment"
-        android:name="com.android.edraak.Fragment.UserActivities.InstructorActivities.InstructorCourse.InstructorCourseFragment"
+        android:name="com.android.edraak.Fragment.UserActivities.InstructorActivities.InstructorCourse.InstructorCourseGroupFragment"
         android:label="fragment_instructor_course"
-        tools:layout="@layout/fragment_instructor_course" />
+        tools:layout="@layout/fragment_instructor_course" >
+        <action
+            android:id="@+id/action_instructorCourseFragment_to_instructorCourseDetailsFragment"
+            app:destination="@id/instructorCourseDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/instructorCourseDetailsFragment"
+        android:name="com.android.edraak.Fragment.UserActivities.InstructorActivities.InstructorCourseDetails.InstructorCourseDetailsFragment"
+        android:label="fragment_instructor_course_details"
+        tools:layout="@layout/fragment_instructor_course_details" />
 </navigation>

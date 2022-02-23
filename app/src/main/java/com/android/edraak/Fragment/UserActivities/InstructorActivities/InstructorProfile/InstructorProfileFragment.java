@@ -28,10 +28,12 @@ public class InstructorProfileFragment extends Fragment {
 
     FragmentInstructorProfileBinding binding;
     NavController navController;
+
     DatabaseReference mDatabaseRef = FirebaseDatabase.getInstance().getReference();
     FirebaseAuth mFireAuth = FirebaseAuth.getInstance();
     FirebaseUser mFireUser = mFireAuth.getCurrentUser();
     String mCurrentUser = mFireUser.getUid();
+
     LoginManager loginManager;
     UserModel user;
     InstructorProfileManager instructorProfileManager = new InstructorProfileManager();
@@ -75,8 +77,6 @@ public class InstructorProfileFragment extends Fragment {
 
 
     private void displayUserInfo(){
-        InstructorProfileManager profileManager = new InstructorProfileManager();
-//        UserModel user = profileManager.getUserDataFromFirebaseRealtime(userModel);
 
         if (mCurrentUser == null){}
 
@@ -86,8 +86,9 @@ public class InstructorProfileFragment extends Fragment {
                 user = snapshot.getValue(UserModel.class);
 
                 boolean isVerifyed = user.isVerified();
-                if (isVerifyed == true){ binding.uiInstructorVERIFYTV.setVisibility(View.VISIBLE); }
-                else if (isVerifyed != true){ binding.uiInstructorVERIFYTV.setVisibility(View.GONE); }
+                if (isVerifyed){ binding.uiInstructorVERIFYTV.setVisibility(View.VISIBLE); }
+                else if (!isVerifyed){ binding.uiInstructorVERIFYTV.setVisibility(View.GONE); }
+
 
                 binding.uiInstructorNAMETV.setText(user.getFullName());
                 binding.uiInstructorEMAILTV.setText(user.getEmail());
@@ -99,10 +100,7 @@ public class InstructorProfileFragment extends Fragment {
 
             }
         });
-
-
     }
-
 
 
 }

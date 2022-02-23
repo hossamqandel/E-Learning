@@ -16,11 +16,11 @@ import com.android.edraak.R;
 import com.android.edraak.databinding.FragmentInstructorCourseBinding;
 
 
-public class InstructorCourseFragment extends Fragment {
+public class InstructorCourseGroupFragment extends Fragment {
 
     FragmentInstructorCourseBinding binding;
     NavController navController;
-    public InstructorCourseFragment() {
+    public InstructorCourseGroupFragment() {
         // Required empty public constructor
     }
 
@@ -36,6 +36,8 @@ public class InstructorCourseFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         binding = FragmentInstructorCourseBinding.bind(view);
         navController = Navigation.findNavController(view);
+
+        binding.uiADDNEWCOURSEBTN.setOnClickListener(v -> navController.navigate(R.id.action_instructorCourseFragment_to_instructorCourseDetailsFragment));
     }
 
 

@@ -1,5 +1,7 @@
 package com.android.edraak.Fragment.UserActivities.InstructorActivities.InstructorProfile;
 
+import android.view.View;
+
 import androidx.annotation.NonNull;
 
 import com.android.edraak.Manager.LoginManager;
@@ -26,22 +28,4 @@ public class InstructorProfileManager {
     }
 
 
-//    protected UserModel getUserDataFromFirebaseRealtime(UserModel user){
-//
-//        if (mUserId == null){}
-//
-//        mDatabaseRef.child("users").child(mUserId).addListenerForSingleValueEvent(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                user = snapshot.getValue(UserModel.class);
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        });
-//
-//        return user;
-//    }
 }

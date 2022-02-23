@@ -17,6 +17,11 @@
     <string name="native_language">اللغه الام</string>
     <string name="phone_number">رقم الهاتف</string>
     <string name="sign_up">انشاء الحساب</string>
+    <string name="course_name">اسم الكورس</string>
+    <string name="quiz_grade">درجة الإختبار</string>
+    <string name="project_grade">درجة المشروع</string>
+    <string name="attendance_grade">درجة الحضور</string>
+    <string name="create_a_new_course">انشاء كورس جديد</string>
 
 
 </resources>

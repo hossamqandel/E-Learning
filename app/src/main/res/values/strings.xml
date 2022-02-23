@@ -16,6 +16,11 @@
     <string name="native_language">Native Language</string>
     <string name="phone_number">Phone Number</string>
     <string name="sign_up">Sign up</string>
+    <string name="course_name">Course Name</string>
+    <string name="quiz_grade">Quiz Grade</string>
+    <string name="project_grade">Project Grade</string>
+    <string name="attendance_grade">Attendance Grade</string>
+    <string name="create_a_new_course">Create A New Course</string>
 
 
 </resources>
