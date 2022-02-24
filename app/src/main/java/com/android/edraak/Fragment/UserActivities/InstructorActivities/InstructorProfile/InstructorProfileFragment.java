@@ -4,7 +4,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -42,6 +44,11 @@ public class InstructorProfileFragment extends Fragment {
         // Required empty public constructor
     }
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        exitFromTheApp();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -67,6 +74,8 @@ public class InstructorProfileFragment extends Fragment {
         binding.uiInstructorCONTINUEBTN.setOnClickListener(v ->
                 navController.navigate(R.id.action_instructorProfileFragment_to_instructorCourseFragment));
 
+
+
     }
 
     @Override
@@ -74,6 +83,7 @@ public class InstructorProfileFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
+
 
 
     private void displayUserInfo(){
@@ -100,6 +110,20 @@ public class InstructorProfileFragment extends Fragment {
 
             }
         });
+    }
+
+
+    private void exitFromTheApp(){
+        // This callback will only be called when MyFragment is at least Started.
+        OnBackPressedCallback callback = new OnBackPressedCallback(true /* enabled by default */) {
+            @Override
+            public void handleOnBackPressed() {
+                getActivity().moveTaskToBack(true);
+                getActivity().finish();
+            }
+        };
+        requireActivity().getOnBackPressedDispatcher().addCallback(this, callback);
+        // The callback can be enabled or disabled here or in handleOnBackPressed()
     }
 
 

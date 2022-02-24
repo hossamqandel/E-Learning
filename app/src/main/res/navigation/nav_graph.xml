@@ -90,5 +90,10 @@
         android:id="@+id/instructorCourseDetailsFragment"
         android:name="com.android.edraak.Fragment.UserActivities.InstructorActivities.InstructorCourseDetails.InstructorCourseDetailsFragment"
         android:label="fragment_instructor_course_details"
-        tools:layout="@layout/fragment_instructor_course_details" />
+        tools:layout="@layout/fragment_instructor_course_details" >
+        <action
+            android:id="@+id/action_instructorCourseDetailsFragment_to_instructorCourseFragment"
+            app:destination="@id/instructorCourseFragment"
+            app:popUpTo="@id/instructorCourseFragment" />
+    </fragment>
 </navigation>

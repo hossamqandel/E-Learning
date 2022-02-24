@@ -62,7 +62,7 @@ public class LoginFragment extends Fragment {
     }
 
     private void firebaseLogin(String email, String password) {
-        if (!email.isEmpty() && !password.isEmpty()){
+        if (!email.isEmpty() && !password.isEmpty()) {
             mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {
                     LoginManager loginManager = new LoginManager(getContext(), navController);

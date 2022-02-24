@@ -61,9 +61,12 @@ public class SplashFragment extends Fragment {
 
 
     void navigateAfterSplashDelayEnd(){
-        new Handler().postDelayed(() ->
-                navController.navigate(R.id.action_splashFragment_to_loginFragment),SPLASH_DISPLAY_TIMER);
-
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                navController.navigate(R.id.action_splashFragment_to_loginFragment);
+            }
+        },SPLASH_DISPLAY_TIMER);
     }
 
 
