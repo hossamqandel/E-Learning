@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
@@ -16,7 +15,7 @@ import androidx.navigation.Navigation;
 import com.android.edraak.Manager.LoginManager;
 import com.android.edraak.Model.UserModel;
 import com.android.edraak.R;
-import com.android.edraak.databinding.FragmentInstructorProfileBinding;
+import com.android.edraak.databinding.FragmentInstProfileBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -26,9 +25,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 
-public class InstructorProfileFragment extends Fragment {
+public class InstProfileFragment extends Fragment {
 
-    FragmentInstructorProfileBinding binding;
+    FragmentInstProfileBinding binding;
     NavController navController;
 
     DatabaseReference mDatabaseRef = FirebaseDatabase.getInstance().getReference();
@@ -38,9 +37,9 @@ public class InstructorProfileFragment extends Fragment {
 
     LoginManager loginManager;
     UserModel user;
-    InstructorProfileManager instructorProfileManager = new InstructorProfileManager();
+    InstProfileManager instProfileManager = new InstProfileManager();
 
-    public InstructorProfileFragment() {
+    public InstProfileFragment() {
         // Required empty public constructor
     }
 
@@ -54,20 +53,20 @@ public class InstructorProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_instructor_profile, container, false);
+        return inflater.inflate(R.layout.fragment_inst_profile, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        binding = FragmentInstructorProfileBinding.bind(view);
+        binding = FragmentInstProfileBinding.bind(view);
         navController = Navigation.findNavController(view);
         loginManager = new LoginManager(getContext(), navController);
 
         displayUserInfo();
 
         binding.uiProfileLOGOUTBTN.setOnClickListener(v -> {
-            instructorProfileManager.logOutAndNavigateBackToLogin(loginManager);
+            instProfileManager.logOutAndNavigateBackToLogin(loginManager);
             navController.navigate(R.id.action_instructorProfileFragment_to_loginFragment2);
         });
 

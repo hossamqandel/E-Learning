@@ -61,7 +61,7 @@ public class LoginManager {
             navController.navigate(R.id.instructorProfileFragment);
             Toast.makeText(context, "Welcome Instructor", Toast.LENGTH_SHORT).show();
         } else if (userType.equals("student")) {
-            navController.navigate(R.id.studentProfileFragment);
+            navController.navigate(R.id.studProfileFragment);
             Toast.makeText(context, "Welcome Student", Toast.LENGTH_SHORT).show();
         }
     }

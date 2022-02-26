@@ -21,6 +21,11 @@
     <string name="project_grade">Project Grade</string>
     <string name="attendance_grade">Attendance Grade</string>
     <string name="create_a_new_course">Create A New Course</string>
+    <string name="instructor_control_panel">Instructor Control Panel</string>
+    <string name="generate_attendance_code">Generate Attendance Code</string>
+    <string name="create_new_quiz">Create New Quiz</string>
+    <string name="upload_material">Upload Material</string>
+    <string name="show_grades">Show Grades</string>
 
 
 </resources>

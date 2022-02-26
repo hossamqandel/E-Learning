@@ -22,6 +22,11 @@
     <string name="project_grade">درجة المشروع</string>
     <string name="attendance_grade">درجة الحضور</string>
     <string name="create_a_new_course">انشاء كورس جديد</string>
+    <string name="instructor_control_panel">لوحة تحكم المعلم</string>
+    <string name="generate_attendance_code">انشاء كود الحضور</string>
+    <string name="create_new_quiz">انشاء اختبار جديد</string>
+    <string name="upload_material">ارفع المواد</string>
+    <string name="show_grades">اظهار الدرجات</string>
 
 
 </resources>

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragment.UserActivities.InstructorActivities.InstructorCourse.InstructorCourseGroupFragment">
+    android:background="@color/dark_charcoal"
+    tools:context=".Fragment.UserActivities.InstructorActivities.InstructorCourseGroup.InstCourseGroupFragment">
 
 
     <androidx.recyclerview.widget.RecyclerView

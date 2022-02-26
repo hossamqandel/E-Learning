@@ -11,7 +11,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class InstructorCourseDetailsManager {
+public class InstCourseDetailsManager {
+
     private DatabaseReference mDatabaseRef = FirebaseDatabase.getInstance().getReference();
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
     private String currentInstructorId = mAuth.getUid();
@@ -19,7 +20,7 @@ public class InstructorCourseDetailsManager {
 
     Context context;
     NavController navController;
-    public InstructorCourseDetailsManager(Context context, NavController navController) {
+    public InstCourseDetailsManager(Context context, NavController navController) {
         this.context = context;
         this.navController = navController;
     }

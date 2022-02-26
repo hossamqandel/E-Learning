@@ -20,7 +20,7 @@
             app:destination="@id/instructorProfileFragment" />
         <action
             android:id="@+id/action_splashFragment_to_studentProfileFragment"
-            app:destination="@id/studentProfileFragment" />
+            app:destination="@id/studProfileFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -34,7 +34,7 @@
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_loginFragment_to_studentProfileFragment"
-            app:destination="@id/studentProfileFragment" />
+            app:destination="@id/studProfileFragment" />
         <action
             android:id="@+id/action_loginFragment_to_registrationFragment"
             app:destination="@id/registrationFragment"
@@ -42,9 +42,9 @@
     </fragment>
     <fragment
         android:id="@+id/instructorProfileFragment"
-        android:name="com.android.edraak.Fragment.UserActivities.InstructorActivities.InstructorProfile.InstructorProfileFragment"
+        android:name="com.android.edraak.Fragment.UserActivities.InstructorActivities.InstructorProfile.InstProfileFragment"
         android:label="fragment_instructor_welcome"
-        tools:layout="@layout/fragment_instructor_profile" >
+        tools:layout="@layout/fragment_inst_profile" >
         <argument
             android:name="userId"
             app:argType="string"
@@ -56,11 +56,6 @@
             android:id="@+id/action_instructorProfileFragment_to_instructorCourseFragment"
             app:destination="@id/instructorCourseFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/studentProfileFragment"
-        android:name="com.android.edraak.Fragment.UserActivities.StudentActivities.StudentProfileFragment"
-        android:label="fragment_student_profile"
-        tools:layout="@layout/fragment_student_profile" />
     <fragment
         android:id="@+id/registrationFragment"
         android:name="com.android.edraak.Fragment.Authentication.Registration.RegistrationFragment"
@@ -75,25 +70,43 @@
             app:destination="@id/instructorProfileFragment" />
         <action
             android:id="@+id/action_registrationFragment_to_studentProfileFragment"
-            app:destination="@id/studentProfileFragment" />
+            app:destination="@id/studProfileFragment" />
     </fragment>
     <fragment
         android:id="@+id/instructorCourseFragment"
-        android:name="com.android.edraak.Fragment.UserActivities.InstructorActivities.InstructorCourse.InstructorCourseGroupFragment"
+        android:name="com.android.edraak.Fragment.UserActivities.InstructorActivities.InstructorCourseGroup.InstCourseGroupFragment"
         android:label="fragment_instructor_course"
-        tools:layout="@layout/fragment_instructor_course" >
+        tools:layout="@layout/fragment_inst_course_group" >
         <action
             android:id="@+id/action_instructorCourseFragment_to_instructorCourseDetailsFragment"
             app:destination="@id/instructorCourseDetailsFragment" />
+        <action
+            android:id="@+id/action_instructorCourseFragment_to_instructorCourseControlFragment"
+            app:destination="@id/instructorCourseControlFragment" />
     </fragment>
     <fragment
         android:id="@+id/instructorCourseDetailsFragment"
-        android:name="com.android.edraak.Fragment.UserActivities.InstructorActivities.InstructorCourseDetails.InstructorCourseDetailsFragment"
+        android:name="com.android.edraak.Fragment.UserActivities.InstructorActivities.InstructorCourseDetails.InstCourseDetailsFragment"
         android:label="fragment_instructor_course_details"
-        tools:layout="@layout/fragment_instructor_course_details" >
+        tools:layout="@layout/fragment_inst_course_details" >
         <action
             android:id="@+id/action_instructorCourseDetailsFragment_to_instructorCourseFragment"
             app:destination="@id/instructorCourseFragment"
             app:popUpTo="@id/instructorCourseFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/instructorCourseControlFragment"
+        android:name="com.android.edraak.Fragment.UserActivities.InstructorActivities.InstructorCourseControl.InstCourseControlFragment"
+        android:label="fragment_instructor_course_control_panel"
+        tools:layout="@layout/fragment_inst_course_control" >
+        <argument
+            android:name="courseId"
+            app:argType="string"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/studProfileFragment"
+        android:name="com.android.edraak.Fragment.UserActivities.StudentActivities.StudProfileFragment"
+        android:label="fragment_stud_profile"
+        tools:layout="@layout/fragment_stud_profile" />
 </navigation>

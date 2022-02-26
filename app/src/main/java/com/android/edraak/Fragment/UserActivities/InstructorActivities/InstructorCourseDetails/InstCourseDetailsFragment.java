@@ -14,15 +14,15 @@ import android.view.ViewGroup;
 
 import com.android.edraak.Model.CourseModel;
 import com.android.edraak.R;
-import com.android.edraak.databinding.FragmentInstructorCourseDetailsBinding;
+import com.android.edraak.databinding.FragmentInstCourseDetailsBinding;
 
 
-public class InstructorCourseDetailsFragment extends Fragment {
+public class InstCourseDetailsFragment extends Fragment {
 
-    FragmentInstructorCourseDetailsBinding binding;
+    FragmentInstCourseDetailsBinding binding;
     NavController navController;
-    InstructorCourseDetailsManager courseDetailsManager;
-    public InstructorCourseDetailsFragment() {
+    InstCourseDetailsManager courseDetailsManager;
+    public InstCourseDetailsFragment() {
         // Required empty public constructor
     }
 
@@ -31,13 +31,13 @@ public class InstructorCourseDetailsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_instructor_course_details, container, false);
+        return inflater.inflate(R.layout.fragment_inst_course_details, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        binding = FragmentInstructorCourseDetailsBinding.bind(view);
+        binding = FragmentInstCourseDetailsBinding.bind(view);
         navController = Navigation.findNavController(view);
 
         binding.uiCOURSEDETAILSCREATEBTN.setOnClickListener(v -> addCourse());
@@ -51,7 +51,7 @@ public class InstructorCourseDetailsFragment extends Fragment {
 
     private void addCourse(){
         CourseModel course = new CourseModel();
-        courseDetailsManager = new InstructorCourseDetailsManager(getActivity(), navController);
+        courseDetailsManager = new InstCourseDetailsManager(getActivity(), navController);
         course.setCourseName(binding.uiCOURSEDETAILSNAMEET.getText().toString().trim());
         course.setAssignmentGrade(Double.parseDouble(binding.uiCOURSEDETAILSQUIZGRADEET.getText().toString().trim()));
         course.setAttendanceGrade(Double.parseDouble(binding.uiCOURSEDETAILSATTENDANCEGRADEET.getText().toString().trim()));
