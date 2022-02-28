@@ -9,12 +9,14 @@
         <entry key="..\:/AndroidProjects/Edraak/app/src/main/res/drawable/undraw_teacher.xml" value="0.2703125" />
         <entry key="..\:/AndroidProjects/Edraak/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidProjects/Edraak/app/src/main/res/layout/course_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidProjects/Edraak/app/src/main/res/layout/fragment_chat.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidProjects/Edraak/app/src/main/res/layout/fragment_inst_attendance.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidProjects/Edraak/app/src/main/res/layout/fragment_inst_course.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidProjects/Edraak/app/src/main/res/layout/fragment_inst_course_control.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidProjects/Edraak/app/src/main/res/layout/fragment_inst_course_details.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidProjects/Edraak/app/src/main/res/layout/fragment_inst_course_group.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidProjects/Edraak/app/src/main/res/layout/fragment_inst_course_quiz.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidProjects/Edraak/app/src/main/res/layout/fragment_inst_grades.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidProjects/Edraak/app/src/main/res/layout/fragment_inst_profile.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidProjects/Edraak/app/src/main/res/layout/fragment_instructor.xml" value="0.264" />
         <entry key="..\:/AndroidProjects/Edraak/app/src/main/res/layout/fragment_instructor_course.xml" value="0.25416666666666665" />
@@ -28,9 +30,16 @@
         <entry key="..\:/AndroidProjects/Edraak/app/src/main/res/layout/fragment_stud_course_details.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidProjects/Edraak/app/src/main/res/layout/fragment_stud_course_group.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidProjects/Edraak/app/src/main/res/layout/fragment_stud_profile.xml" value="0.264" />
+        <entry key="..\:/AndroidProjects/Edraak/app/src/main/res/layout/fragment_stud_quiz.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidProjects/Edraak/app/src/main/res/layout/fragment_stud_quiz_group.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidProjects/Edraak/app/src/main/res/layout/fragment_student.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidProjects/Edraak/app/src/main/res/layout/fragment_student_profile.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidProjects/Edraak/app/src/main/res/layout/fragment_user_type.xml" value="0.4" />
+        <entry key="..\:/AndroidProjects/Edraak/app/src/main/res/layout/inst_grades_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidProjects/Edraak/app/src/main/res/layout/item_chat.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidProjects/Edraak/app/src/main/res/layout/item_chat_me.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidProjects/Edraak/app/src/main/res/layout/item_chat_other.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidProjects/Edraak/app/src/main/res/layout/student_course_quizzes_item.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>

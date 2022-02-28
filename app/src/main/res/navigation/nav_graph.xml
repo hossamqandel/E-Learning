@@ -109,6 +109,12 @@
         <action
             android:id="@+id/action_instructorCourseControlFragment_to_instCourseQuizFragment"
             app:destination="@id/instCourseQuizFragment" />
+        <action
+            android:id="@+id/action_instructorCourseControlFragment_to_instGradesFragment"
+            app:destination="@id/instGradesFragment" />
+        <action
+            android:id="@+id/action_instructorCourseControlFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
     </fragment>
     <fragment
         android:id="@+id/studProfileFragment"
@@ -154,12 +160,45 @@
             android:name="courseId"
             app:argType="string"
             android:defaultValue="0" />
+        <action
+            android:id="@+id/action_studCourseDetailsFragment_to_studQuizGroupFragment"
+            app:destination="@id/studQuizGroupFragment" />
+        <action
+            android:id="@+id/action_studCourseDetailsFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
     </fragment>
     <fragment
         android:id="@+id/instCourseQuizFragment"
         android:name="com.android.edraak.Fragment.UserActivities.InstructorActivities.InstructorCourseQuiz.InstCourseQuizFragment"
         android:label="fragment_inst_course_quiz"
         tools:layout="@layout/fragment_inst_course_quiz" >
+        <argument
+            android:name="courseId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/instGradesFragment"
+        android:name="com.android.edraak.Fragment.UserActivities.InstructorActivities.InstructorMembersGrades.InstGradesFragment"
+        android:label="fragment_inst_grades"
+        tools:layout="@layout/fragment_inst_grades" >
+        <argument
+            android:name="courseId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/studQuizGroupFragment"
+        android:name="com.android.edraak.Fragment.UserActivities.StudentActivities.StudQuizGroup.StudQuizGroupFragment"
+        android:label="fragment_stud_quiz_group"
+        tools:layout="@layout/fragment_stud_quiz_group" >
+        <argument
+            android:name="courseId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.android.edraak.Fragment.Common.ChatFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat" >
         <argument
             android:name="courseId"
             app:argType="string" />

@@ -2,25 +2,25 @@ package com.android.edraak.Model;
 
 public class ChatModel {
 
-    private String massage ;
+    private String message;
     private String userName ;
     private String senderId ;
 
     public ChatModel() {
     }
 
-    public ChatModel(String massage, String userName, String senderId) {
-        this.massage = massage;
+    public ChatModel(String message, String userName, String senderId) {
+        this.message = message;
         this.userName = userName;
         this.senderId = senderId;
     }
 
-    public String getMassage() {
-        return massage;
+    public String getMessage() {
+        return message;
     }
 
-    public void setMassage(String massage) {
-        this.massage = massage;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public String getUserName() {

@@ -26,6 +26,7 @@ public class InstCourseControlFragment extends Fragment {
     NavController navController;
     FragmentInstCourseControlBinding binding;
     InstCourseControlManager instCourseControlManager;
+    String courseId;
 
     public InstCourseControlFragment() {
         // Required empty public constructor
@@ -44,7 +45,7 @@ public class InstCourseControlFragment extends Fragment {
         binding = FragmentInstCourseControlBinding.bind(view);
         navController = Navigation.findNavController(view);
         instCourseControlManager = new InstCourseControlManager(navController);
-        String courseId = InstCourseControlFragmentArgs.fromBundle(getArguments()).getCourseId();
+        courseId = InstCourseControlFragmentArgs.fromBundle(getArguments()).getCourseId();
 
 
         showAndCopyCurrentCourseId(courseId);
@@ -52,6 +53,8 @@ public class InstCourseControlFragment extends Fragment {
 
         binding.secondeCardView.setOnClickListener(v -> navToCreateQuizFrag(courseId));
         instCourseControlManager.passCourseIdToAttendancePage(binding.firstCardView, courseId);
+
+        binding.instChat.setOnClickListener(v -> navToChat(courseId));
 
     }
 
@@ -76,6 +79,10 @@ public class InstCourseControlFragment extends Fragment {
         navController.navigate(action);
     }
 
+
+    private void navToChat(String courseId){
+        navController.navigate(InstCourseControlFragmentDirections.actionInstructorCourseControlFragmentToChatFragment(courseId));
+    }
     @Override
     public void onDestroyView() {
         super.onDestroyView();

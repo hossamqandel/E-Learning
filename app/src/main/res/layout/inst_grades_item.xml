@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/_12sdp"
+    app:cardElevation="@dimen/_15sdp"
+    android:layout_margin="@dimen/_12sdp"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/_8sdp">
+
+            <TextView
+                android:id="@+id/name_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name: "
+                android:paddingVertical="@dimen/_4sdp"
+                android:textSize="@dimen/_14sdp"
+                android:textStyle="bold"
+                android:textColor="@color/profile_board"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/email_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="E-Mail: "
+                android:paddingVertical="@dimen/_4sdp"
+                android:textSize="@dimen/_14sdp"
+                android:textStyle="bold"
+                android:textColor="@color/profile_board"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/name_TV" />
+
+            <TextView
+                android:id="@+id/quizGrade_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quiz Grade: "
+                android:paddingVertical="@dimen/_4sdp"
+                android:textSize="@dimen/_14sdp"
+                android:textStyle="bold"
+                android:textColor="@color/profile_board"                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/email_TV" />
+
+            <TextView
+                android:id="@+id/attendanceGrade_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Attendance Grade: "
+                android:textSize="@dimen/_14sdp"
+                android:textStyle="bold"
+                android:textColor="@color/profile_board"                android:paddingVertical="@dimen/_4sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/quizGrade_TV" />
+
+
+            <TextView
+                android:id="@+id/userName_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Hossam El-Sayed"
+                android:paddingVertical="@dimen/_4sdp"
+                android:paddingHorizontal="@dimen/_4sdp"
+                android:textSize="@dimen/_14sdp"
+                app:layout_constraintStart_toEndOf="@id/name_TV"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/userEmail_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/_4sdp"
+                android:paddingHorizontal="@dimen/_4sdp"
+                android:textSize="@dimen/_14sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/email_TV"
+                app:layout_constraintStart_toEndOf="@id/email_TV"
+                app:layout_constraintTop_toBottomOf="@+id/name_TV"
+                tools:text="Hossam El-Sayed" />
+
+            <TextView
+                android:id="@+id/userQuizGrade_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/_4sdp"
+                android:paddingHorizontal="@dimen/_4sdp"
+                android:textSize="@dimen/_14sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/quizGrade_TV"
+                app:layout_constraintStart_toEndOf="@+id/quizGrade_TV"
+                app:layout_constraintTop_toBottomOf="@+id/email_TV"
+                tools:text="20" />
+
+            <TextView
+                android:id="@+id/userAttendanceGrade_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/_4sdp"
+                android:paddingHorizontal="@dimen/_4sdp"
+                android:textSize="@dimen/_14sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/attendanceGrade_TV"
+                app:layout_constraintStart_toEndOf="@+id/attendanceGrade_TV"
+                app:layout_constraintTop_toTopOf="@+id/attendanceGrade_TV"
+                tools:text="50" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</com.google.android.material.card.MaterialCardView>

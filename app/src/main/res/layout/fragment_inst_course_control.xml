@@ -215,6 +215,7 @@
         android:textColor="@color/dark_charcoal"/>
 
     <ImageView
+        android:id="@+id/inst_Chat"
         android:layout_width="@dimen/_40sdp"
         android:layout_height="@dimen/_40sdp"
         android:src="@drawable/ic_chat"

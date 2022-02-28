@@ -14,6 +14,8 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.android.edraak.Fragment.UserActivities.InstructorActivities.InstructorCourseControl.InstCourseControlFragmentArgs;
+import com.android.edraak.Fragment.UserActivities.InstructorActivities.InstructorCourseControl.InstCourseControlFragmentDirections;
+import com.android.edraak.Fragment.UserActivities.StudentActivities.StudentCourses.StudCourseGroupFragmentDirections;
 import com.android.edraak.R;
 import com.android.edraak.databinding.FragmentStudCourseDetailsBinding;
 import com.google.firebase.auth.FirebaseAuth;
@@ -30,6 +32,7 @@ public class StudCourseDetailsFragment extends Fragment {
     NavController navController;
     DatabaseReference mDatabaseRef = FirebaseDatabase.getInstance().getReference();
     String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+    String courseId;
 
     public StudCourseDetailsFragment() {
         // Required empty public constructor
@@ -47,8 +50,8 @@ public class StudCourseDetailsFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         binding = FragmentStudCourseDetailsBinding.bind(view);
         navController = Navigation.findNavController(view);
+        courseId = StudCourseDetailsFragmentArgs.fromBundle(getArguments()).getCourseId();
 
-        String courseId = StudCourseDetailsFragmentArgs.fromBundle(getArguments()).getCourseId();
         Toast.makeText(getContext(), "CourseId #" + courseId, Toast.LENGTH_SHORT).show(); // TODO this Toast was just to make sure the courseId moved correct - remove it after finishing the project
 
 
@@ -60,7 +63,14 @@ public class StudCourseDetailsFragment extends Fragment {
             }
         });
 
+        binding.fourthCardview.setOnClickListener(v -> viewCourseQuizzes(courseId));
+
+        binding.thirdfirstCardview.setOnClickListener(v -> navToChat(courseId));
     }
+
+
+
+
 
 
     private void signStudentAttendance(String courseId, String attendanceCode) {
@@ -84,6 +94,16 @@ public class StudCourseDetailsFragment extends Fragment {
             }
         });
 
+    }
+
+    private void viewCourseQuizzes(String courseId){
+        StudCourseDetailsFragmentDirections.ActionStudCourseDetailsFragmentToStudQuizGroupFragment action =
+                StudCourseDetailsFragmentDirections.actionStudCourseDetailsFragmentToStudQuizGroupFragment(courseId);
+        navController.navigate(action);
+    }
+
+    private void navToChat(String courseId){
+        navController.navigate(StudCourseDetailsFragmentDirections.actionStudCourseDetailsFragmentToChatFragment(courseId));
     }
 
 
