@@ -17,13 +17,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class InstProfileManager extends Fragment {
+public class InstProfileManager {
 
-    FirebaseUser mFireUser = FirebaseAuth.getInstance().getCurrentUser();;
-    DatabaseReference mDatabaseRef = FirebaseDatabase.getInstance().getReference();
-    String mUserId = mFireUser.getUid();
 
-    protected void logOutAndNavigateBackToLogin(LoginManager loginManager) {
+    public void logOutAndNavigateBackToLogin(LoginManager loginManager) {
         loginManager.Logout();
     }
 

@@ -27,6 +27,7 @@
     <string name="create_new_quiz">انشاء اختبار جديد</string>
     <string name="upload_material">ارفع المواد</string>
     <string name="show_grades">اظهار الدرجات</string>
+    <string name="confirm">تاكيد</string>
 
 
 </resources>

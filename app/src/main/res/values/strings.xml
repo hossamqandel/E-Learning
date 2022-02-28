@@ -26,6 +26,7 @@
     <string name="create_new_quiz">Create New Quiz</string>
     <string name="upload_material">Upload Material</string>
     <string name="show_grades">Show Grades</string>
+    <string name="confirm">Confirm</string>
 
 
 </resources>

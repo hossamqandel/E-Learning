@@ -1,9 +1,6 @@
-package com.android.edraak.Fragment.UserActivities.InstructorActivities.InstructorProfile;
+package com.android.edraak.Fragment.UserActivities.StudentActivities.StudentProfile;
 
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
@@ -12,10 +9,16 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Toast;
+
+import com.android.edraak.Fragment.UserActivities.InstructorActivities.InstructorProfile.InstProfileManager;
 import com.android.edraak.Manager.LoginManager;
 import com.android.edraak.Model.UserModel;
 import com.android.edraak.R;
-import com.android.edraak.databinding.FragmentInstProfileBinding;
+import com.android.edraak.databinding.FragmentStudProfileBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -25,9 +28,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 
-public class InstProfileFragment extends Fragment {
+public class StudProfileFragment extends Fragment {
 
-    FragmentInstProfileBinding binding;
+    FragmentStudProfileBinding binding;
     NavController navController;
 
     DatabaseReference mDatabaseRef = FirebaseDatabase.getInstance().getReference();
@@ -39,27 +42,23 @@ public class InstProfileFragment extends Fragment {
     UserModel user;
     InstProfileManager instProfileManager = new InstProfileManager();
 
-    public InstProfileFragment() {
+    public StudProfileFragment() {
         // Required empty public constructor
     }
 
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_inst_profile, container, false);
+        return inflater.inflate(R.layout.fragment_stud_profile, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         exitFromTheApp();
-        binding = FragmentInstProfileBinding.bind(view);
+        binding = FragmentStudProfileBinding.bind(view);
         navController = Navigation.findNavController(view);
         loginManager = new LoginManager(getContext(), navController);
 
@@ -67,13 +66,12 @@ public class InstProfileFragment extends Fragment {
 
         binding.uiProfileLOGOUTBTN.setOnClickListener(v -> {
             instProfileManager.logOutAndNavigateBackToLogin(loginManager);
-            navController.navigate(R.id.action_instructorProfileFragment_to_loginFragment2);
+            navController.navigate(R.id.action_studProfileFragment_to_loginFragment);
         });
 
-        binding.uiInstructorCONTINUEBTN.setOnClickListener(v ->
-                navController.navigate(R.id.action_instructorProfileFragment_to_instructorCourseFragment));
 
-
+        binding.uiStudentCONTINUEBTN.setOnClickListener(v ->
+                navController.navigate(R.id.action_studProfileFragment_to_studCourseGroupFragment));
 
     }
 
@@ -82,7 +80,6 @@ public class InstProfileFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
-
 
 
     private void displayUserInfo(){
@@ -95,22 +92,21 @@ public class InstProfileFragment extends Fragment {
                 user = snapshot.getValue(UserModel.class);
 
                 boolean isVerifyed = user.isVerified();
-                if (isVerifyed){ binding.uiInstructorVERIFYTV.setVisibility(View.VISIBLE); }
-                else if (!isVerifyed){ binding.uiInstructorVERIFYTV.setVisibility(View.GONE); }
+                if (isVerifyed){ binding.uiStudentVERIFYIV.setVisibility(View.VISIBLE); }
+                else if (!isVerifyed){ binding.uiStudentVERIFYIV.setVisibility(View.GONE); }
 
 
-                binding.uiInstructorNAMETV.setText(user.getFullName());
-                binding.uiInstructorEMAILTV.setText(user.getEmail());
-                binding.uiInstructorPHONENUMBERTV.setText(user.getPhoneNumber());
+                binding.uiStudentNAMETV.setText(user.getFullName());
+                binding.uiStudentEMAILTV.setText(user.getEmail());
+                binding.uiStudentPHONETV.setText(user.getPhoneNumber());
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
+                Toast.makeText(getContext(), ""+error.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
     }
-
 
     private void exitFromTheApp(){
         // This callback will only be called when MyFragment is at least Started.
@@ -124,6 +120,4 @@ public class InstProfileFragment extends Fragment {
         requireActivity().getOnBackPressedDispatcher().addCallback(this, callback);
         // The callback can be enabled or disabled here or in handleOnBackPressed()
     }
-
-
 }

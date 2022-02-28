@@ -25,7 +25,7 @@ public class InstCourseControlFragment extends Fragment {
 
     NavController navController;
     FragmentInstCourseControlBinding binding;
-
+    InstCourseControlManager instCourseControlManager;
 
     public InstCourseControlFragment() {
         // Required empty public constructor
@@ -43,15 +43,20 @@ public class InstCourseControlFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         binding = FragmentInstCourseControlBinding.bind(view);
         navController = Navigation.findNavController(view);
+        instCourseControlManager = new InstCourseControlManager(navController);
         String courseId = InstCourseControlFragmentArgs.fromBundle(getArguments()).getCourseId();
 
-        showCurrentCourseId(courseId);
 
+        showAndCopyCurrentCourseId(courseId);
         Toast.makeText(getContext(), "CourseId #"+courseId, Toast.LENGTH_SHORT).show(); // TODO this Toast was just to make sure the courseId moved correct - remove it after finishing the project
+
+        binding.secondeCardView.setOnClickListener(v -> navToCreateQuizFrag(courseId));
+        instCourseControlManager.passCourseIdToAttendancePage(binding.firstCardView, courseId);
+
     }
 
 
-    private void showCurrentCourseId(String currentCourseId){
+    private void showAndCopyCurrentCourseId(String currentCourseId){
         binding.CurrentCourseIdTV.setText(currentCourseId);
 
         binding.CurrentCourseIdTV.setOnLongClickListener(v -> {
@@ -65,6 +70,11 @@ public class InstCourseControlFragment extends Fragment {
 
     }
 
+    private void navToCreateQuizFrag(String courseId){
+        InstCourseControlFragmentDirections.ActionInstructorCourseControlFragmentToInstCourseQuizFragment
+                action = InstCourseControlFragmentDirections.actionInstructorCourseControlFragmentToInstCourseQuizFragment(courseId);
+        navController.navigate(action);
+    }
 
     @Override
     public void onDestroyView() {

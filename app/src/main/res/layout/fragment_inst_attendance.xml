@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragment.UserActivities.InstructorActivities.InstructorAttendance.InstAttendanceFragment" >
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/GENERATE__CODE_BTN"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="@color/profile_board"
+        android:text="Generate Random"
+        app:cornerRadius="@dimen/_14sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/CODE_TV"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="0dp"
+        tools:text="7735"
+        android:textSize="@dimen/_15sdp"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/GENERATE__CODE_BTN"
+        app:layout_constraintEnd_toStartOf="@+id/GENERATE__CODE_BTN"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/GENERATE__CODE_BTN" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/CONFIRM_CODE_BTN"
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:backgroundTint="@color/dark_charcoal"
+        android:text="@string/confirm"
+        app:cornerRadius="@dimen/_8sdp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -34,7 +34,7 @@ public class LoginManager {
     public void Logout() {
         mAuth.signOut();
         //TODO Nav to Login From Profile
-        //navController.navigate(R.id.act);
+//        navController.navigate(R.id.ac);
         Toast.makeText(context, "Logged Out", Toast.LENGTH_LONG).show();
     }
 

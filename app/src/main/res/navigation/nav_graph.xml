@@ -103,10 +103,65 @@
             android:name="courseId"
             app:argType="string"
             android:defaultValue="0" />
+        <action
+            android:id="@+id/action_instructorCourseControlFragment_to_instAttendanceFragment"
+            app:destination="@id/instAttendanceFragment" />
+        <action
+            android:id="@+id/action_instructorCourseControlFragment_to_instCourseQuizFragment"
+            app:destination="@id/instCourseQuizFragment" />
     </fragment>
     <fragment
         android:id="@+id/studProfileFragment"
-        android:name="com.android.edraak.Fragment.UserActivities.StudentActivities.StudProfileFragment"
+        android:name="com.android.edraak.Fragment.UserActivities.StudentActivities.StudentProfile.StudProfileFragment"
         android:label="fragment_stud_profile"
-        tools:layout="@layout/fragment_stud_profile" />
+        tools:layout="@layout/fragment_stud_profile" >
+        <argument
+            android:name="userId"
+            app:argType="string"
+            android:defaultValue="empty" />
+        <action
+            android:id="@+id/action_studProfileFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_studProfileFragment_to_studCourseGroupFragment"
+            app:destination="@id/studCourseGroupFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/instAttendanceFragment"
+        android:name="com.android.edraak.Fragment.UserActivities.InstructorActivities.InstructorAttendance.InstAttendanceFragment"
+        android:label="fragment_inst_attendance"
+        tools:layout="@layout/fragment_inst_attendance" >
+        <argument
+            android:name="courseId"
+            android:defaultValue="0"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/studCourseGroupFragment"
+        android:name="com.android.edraak.Fragment.UserActivities.StudentActivities.StudentCourses.StudCourseGroupFragment"
+        android:label="fragment_stud_course_group"
+        tools:layout="@layout/fragment_stud_course_group" >
+        <action
+            android:id="@+id/action_studCourseGroupFragment_to_studCourseDetailsFragment"
+            app:destination="@id/studCourseDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/studCourseDetailsFragment"
+        android:name="com.android.edraak.Fragment.UserActivities.StudentActivities.StudentCourseDetails.StudCourseDetailsFragment"
+        android:label="fragment_stud_course_details"
+        tools:layout="@layout/fragment_stud_course_details" >
+        <argument
+            android:name="courseId"
+            app:argType="string"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/instCourseQuizFragment"
+        android:name="com.android.edraak.Fragment.UserActivities.InstructorActivities.InstructorCourseQuiz.InstCourseQuizFragment"
+        android:label="fragment_inst_course_quiz"
+        tools:layout="@layout/fragment_inst_course_quiz" >
+        <argument
+            android:name="courseId"
+            app:argType="string" />
+    </fragment>
 </navigation>

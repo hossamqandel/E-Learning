@@ -22,6 +22,8 @@
     <color name="ocean_blue">#5349c0</color>
     <color name="ufo_green">#2EC973</color>
     <color name="grey">#e3e2e7</color>
+    <color name="deep_White">#ebeff0</color>
+    <color name="blue_Sky">#0096e6</color>
 
     <color name="profile_board">#124c60</color>
 </resources>

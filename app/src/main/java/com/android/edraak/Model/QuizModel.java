@@ -7,18 +7,18 @@ public class QuizModel {
     private String secondeAnswer ;
     private String thirdAnswer ;
     private String lastAnswer ;
-    private int correctAnswer ;
+    private int rightAnswer;
 
     public QuizModel() {
     }
 
-    public QuizModel(String question, String firstAnswer, String secondeAnswer, String thirdAnswer, String lastAnswer, int correctAnswer) {
+    public QuizModel(String question, String firstAnswer, String secondeAnswer, String thirdAnswer, String lastAnswer, int rightAnswer) {
         this.question = question;
         this.firstAnswer = firstAnswer;
         this.secondeAnswer = secondeAnswer;
         this.thirdAnswer = thirdAnswer;
         this.lastAnswer = lastAnswer;
-        this.correctAnswer = correctAnswer;
+        this.rightAnswer = rightAnswer;
     }
 
     public String getQuestion() {
@@ -61,11 +61,11 @@ public class QuizModel {
         this.lastAnswer = lastAnswer;
     }
 
-    public int getCorrectAnswer() {
-        return correctAnswer;
+    public int getRightAnswer() {
+        return rightAnswer;
     }
 
-    public void setCorrectAnswer(int correctAnswer) {
-        this.correctAnswer = correctAnswer;
+    public void setRightAnswer(int rightAnswer) {
+        this.rightAnswer = rightAnswer;
     }
 }

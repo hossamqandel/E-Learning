@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Fragment.UserActivities.StudentActivities.StudProfileFragment"
+    tools:context=".Fragment.UserActivities.StudentActivities.StudentProfile.StudProfileFragment"
     android:background="@color/grey">
 
     <ImageView
@@ -13,6 +13,17 @@
         android:layout_height="@dimen/_160sdp"
         android:src="@drawable/profile_frame"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/ui_Profile_LOGOUT_BTN"
+        android:layout_width="@dimen/_28sdp"
+        android:layout_height="@dimen/_28sdp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/ic_logout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -53,11 +64,11 @@
         tools:text="Hossam" />
 
     <ImageView
-        android:id="@+id/ui_Student_VERIFY_TV"
-        android:layout_width="@dimen/_12sdp"
-        android:layout_height="@dimen/_12sdp"
+        android:id="@+id/ui_Student_VERIFY_IV"
+        android:layout_width="@dimen/_14sdp"
+        android:layout_height="@dimen/_14sdp"
         android:layout_marginStart="7dp"
-        tools:src="@drawable/verification"
+        android:src="@drawable/verification"
         app:layout_constraintBottom_toBottomOf="@+id/ui_Student_NAME_TV"
         app:layout_constraintStart_toEndOf="@+id/ui_Student_NAME_TV"
         app:layout_constraintTop_toTopOf="@+id/ui_Student_NAME_TV" />
@@ -94,7 +105,7 @@
         app:layout_constraintTop_toBottomOf="@+id/ui_Email_IV" />
 
     <TextView
-        android:id="@+id/ui_Student_PASSWORD_TV"
+        android:id="@+id/ui_Student_PHONE_TV"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textSize="20sp"
@@ -106,19 +117,18 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/ui_Student_CONTINUE_BTN"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/_10sdp"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="@color/profile_board"
+        android:text="Continue"
+        app:cornerRadius="@dimen/_20sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

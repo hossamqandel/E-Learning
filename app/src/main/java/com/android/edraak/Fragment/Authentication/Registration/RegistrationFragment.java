@@ -72,6 +72,8 @@ public class RegistrationFragment extends Fragment {
     }
 
 
+
+
     @Override
     public void onDestroyView() {
         super.onDestroyView();
