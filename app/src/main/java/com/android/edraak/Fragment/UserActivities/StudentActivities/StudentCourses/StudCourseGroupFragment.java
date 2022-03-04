@@ -15,7 +15,6 @@ import android.widget.Toast;
 
 import com.android.edraak.Adapter.Instructor.InstructorCourseAdapter;
 import com.android.edraak.Model.CourseModel;
-import com.android.edraak.R;
 import com.android.edraak.databinding.FragmentStudCourseGroupBinding;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -32,8 +31,9 @@ public class StudCourseGroupFragment extends Fragment {
     FragmentStudCourseGroupBinding binding;
     NavController navController;
     DatabaseReference mDatabaseRef = FirebaseDatabase.getInstance().getReference();
-    List<CourseModel> mGroup = new ArrayList<>();
+    List<CourseModel> mCourses = new ArrayList<>();
     InstructorCourseAdapter mAdapter = new InstructorCourseAdapter();
+
     public StudCourseGroupFragment() {
         // Required empty public constructor
     }
@@ -42,13 +42,13 @@ public class StudCourseGroupFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_stud_course_group, container, false);
+        binding = FragmentStudCourseGroupBinding.inflate(inflater, container, false);
+        return binding.getRoot();
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        binding = FragmentStudCourseGroupBinding.bind(view);
         navController = Navigation.findNavController(view);
 
         binding.studCourseADDBTN.setOnClickListener(new View.OnClickListener() {
@@ -60,21 +60,19 @@ public class StudCourseGroupFragment extends Fragment {
     }
 
 
-
-    private void getCourses(){
+    private void getCourses() {
         String courseId = binding.studCourseIdET.getText().toString().trim();
 
-        if (courseId.isEmpty()){
+        if (courseId.isEmpty()) {
             Toast.makeText(getContext(), "Enter Course ID", Toast.LENGTH_SHORT).show();
-        }
-        else {
+        } else {
             mDatabaseRef.child("courses").child(courseId).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                     CourseModel course = snapshot.getValue(CourseModel.class);
-                    mGroup.add(course);
-                    mAdapter.setList(mGroup);
+                    mCourses.add(course);
+                    mAdapter.setList(mCourses);
                     binding.studRecycler.setAdapter(mAdapter);
                     binding.studCourseIdET.setText("");
 
@@ -95,6 +93,7 @@ public class StudCourseGroupFragment extends Fragment {
             });
         }
     }
+
     @Override
     public void onDestroyView() {
         super.onDestroyView();

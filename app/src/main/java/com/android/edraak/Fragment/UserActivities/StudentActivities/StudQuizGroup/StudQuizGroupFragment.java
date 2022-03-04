@@ -15,7 +15,6 @@ import android.widget.Toast;
 
 import com.android.edraak.Adapter.Student.StudentCourseQuizzesAdapter;
 import com.android.edraak.R;
-import com.android.edraak.databinding.FragmentStudCourseGroupBinding;
 import com.android.edraak.databinding.FragmentStudQuizGroupBinding;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -35,6 +34,7 @@ public class StudQuizGroupFragment extends Fragment {
     StudentCourseQuizzesAdapter mAdapter = new StudentCourseQuizzesAdapter();
     List<String> mCourseQuizzes = new ArrayList<>();
     String courseId;
+
     public StudQuizGroupFragment() {
         // Required empty public constructor
     }
@@ -53,22 +53,29 @@ public class StudQuizGroupFragment extends Fragment {
         binding = FragmentStudQuizGroupBinding.bind(view);
         navController = Navigation.findNavController(view);
 
-        loadCourseQuizzes(courseId);
-        Toast.makeText(getContext(), ""+courseId, Toast.LENGTH_SHORT).show();
+        getCurrentCourseQuizzes(courseId);
+        Toast.makeText(getContext(), "" + courseId, Toast.LENGTH_SHORT).show();
     }
 
-    
-    private void loadCourseQuizzes(String CourseId){
+
+    private void getCurrentCourseQuizzes(String CourseId) {
         mDatabaseRef.child("courses quiz").child(courseId).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.getValue() != null) {
-
+                    mCourseQuizzes.clear();
                     for (DataSnapshot snapshot1 : snapshot.getChildren()) {
                         mCourseQuizzes.add(snapshot1.getKey());
                     }
                     mAdapter.setList(mCourseQuizzes);
                     binding.recyclerQuizzes.setAdapter(mAdapter);
+                    mAdapter.setOnClick(new StudentCourseQuizzesAdapter.OnClick() {
+                        @Override
+                        public void onItemClick(String quizId) {
+                            navController.navigate(StudQuizGroupFragmentDirections.actionStudQuizGroupFragmentToStudQuizFragment(courseId, quizId));
+                            Toast.makeText(getContext(), "" + quizId, Toast.LENGTH_LONG).show();
+                        }
+                    });
                 } else {
                     Toast.makeText(getContext(), "No Quiz", Toast.LENGTH_SHORT).show();
                 }

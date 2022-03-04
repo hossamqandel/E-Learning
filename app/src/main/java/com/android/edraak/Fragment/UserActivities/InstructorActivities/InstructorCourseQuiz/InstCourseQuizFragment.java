@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
@@ -35,6 +36,7 @@ public class InstCourseQuizFragment extends Fragment {
     List<QuizModel> mQuizGroup;
     String courseId;
 
+    InstCourseQuizViewModel instCourseQuizViewModel;
     public InstCourseQuizFragment() {
         // Required empty public constructor
     }
@@ -44,6 +46,8 @@ public class InstCourseQuizFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        instCourseQuizViewModel = ViewModelProviders.of(this).get(InstCourseQuizViewModel.class);
+
         return inflater.inflate(R.layout.fragment_inst_course_quiz, container, false);
     }
 

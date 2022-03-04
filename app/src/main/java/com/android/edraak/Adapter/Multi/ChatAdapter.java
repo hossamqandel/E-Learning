@@ -20,7 +20,7 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.MyViewHolder> 
     private final int sMESSAGE_TYPE_IN_SENDER = 0;
     private final int sMESSAGE_TYPE_IN_RECEIVER = 1;
 
-    String currentUserId = FirebaseAuth.getInstance().getUid();
+    String currentUserId = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
     private List<ChatModel> list;
 
@@ -43,8 +43,15 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.MyViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+
+        if (list.get(position).getSenderId().equals(currentUserId)){
             holder.message.setText(list.get(position).getMessage());
+        }
+        else {
             holder.name.setText(list.get(position).getUserName());
+            holder.message.setText(list.get(position).getMessage());
+        }
+
     }
 
     @Override

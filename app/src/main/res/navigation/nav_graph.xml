@@ -193,6 +193,9 @@
         <argument
             android:name="courseId"
             app:argType="string" />
+        <action
+            android:id="@+id/action_studQuizGroupFragment_to_studQuizFragment"
+            app:destination="@id/studQuizFragment" />
     </fragment>
     <fragment
         android:id="@+id/chatFragment"
@@ -201,6 +204,17 @@
         tools:layout="@layout/fragment_chat" >
         <argument
             android:name="courseId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/studQuizFragment"
+        android:name="com.android.edraak.Fragment.UserActivities.StudentActivities.StudentSolveQuiz.StudQuizFragment"
+        android:label="fragment_stud_quiz"
+        tools:layout="@layout/fragment_stud_quiz" >
+        <argument android:name="courseId"
+            app:argType="string" />
+        <argument
+            android:name="quizId"
             app:argType="string" />
     </fragment>
 </navigation>

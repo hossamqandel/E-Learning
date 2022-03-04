@@ -79,7 +79,8 @@ public class RegistrationValidation {
     }
 
     private void pushToFirebase(UserModel userModel) {
-        mDatabaseRef.child("users").child(userModel.getUserId()).setValue(userModel).addOnCompleteListener(task -> {
+        mDatabaseRef.child("users").child(userModel.getUserId()).setValue(userModel)
+                .addOnCompleteListener(task -> {
             Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show();
             LoginManager loginManager = new LoginManager(context, navController);
             loginManager.Login();

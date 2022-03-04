@@ -24,102 +24,125 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:textSize="@dimen/_20sdp"
-            tools:text="Where is Egypt?" />
+            android:textSize="@dimen/_16sdp"
+            android:textStyle="bold"
+            tools:text="Where is Egypt?"
+            android:textColor="@color/profile_board"/>
     </androidx.cardview.widget.CardView>
 
 
     <!--  ****************  -->
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/firstCard"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_45sdp"
-        android:layout_marginHorizontal="@dimen/_10sdp"
-        android:layout_marginTop="@dimen/_45sdp"
-        app:cardCornerRadius="@dimen/_4sdp"
-        app:cardElevation="@dimen/_8sdp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+    <RadioGroup
+        android:id="@+id/radioGroup2"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_200sdp"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_25sdp"
+        app:layout_constraintStart_toStartOf="@+id/mainCard"
         app:layout_constraintTop_toBottomOf="@+id/mainCard">
 
-        <TextView
-            android:id="@+id/stud_FirstAnswer"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:textSize="@dimen/_20sdp"
-            tools:text="Where is Egypt?" />
-    </androidx.cardview.widget.CardView>
+        <RadioButton
+            android:id="@+id/rb1"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <RadioButton
+            android:id="@+id/rb2"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <RadioButton
+            android:id="@+id/rb3"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <RadioButton
+            android:id="@+id/rb4"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
 
 
+    </RadioGroup>
     <!--  ****************  -->
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/secondCard"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_45sdp"
-        android:layout_margin="@dimen/_10sdp"
-        app:cardCornerRadius="@dimen/_4sdp"
-        app:cardElevation="@dimen/_8sdp"
+    <TextView
+        android:id="@+id/quiz_First_Choice_TV"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_50sdp"
+        android:gravity="start|center_vertical"
+        android:paddingStart="@dimen/_12sdp"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/mainCard"
+        app:layout_constraintStart_toEndOf="@+id/radioGroup2"
+        app:layout_constraintTop_toTopOf="@+id/radioGroup2"
+        tools:text="Africa"
+        android:textSize="@dimen/_12sdp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/quiz_Second_Choice_TV"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_50sdp"
+        android:gravity="start|center_vertical"
+        android:paddingStart="@dimen/_12sdp"
+        android:background="@color/white"
+        android:textSize="@dimen/_12sdp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/mainCard"
+        app:layout_constraintStart_toEndOf="@+id/radioGroup2"
+        app:layout_constraintTop_toBottomOf="@+id/quiz_First_Choice_TV"
+        tools:text="Africa" />
+
+    <TextView
+        android:id="@+id/quiz_Third_Choice_TV"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_50sdp"
+        android:gravity="start|center_vertical"
+        android:paddingStart="@dimen/_12sdp"
+        android:textSize="@dimen/_12sdp"
+        android:textStyle="bold"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/mainCard"
+        app:layout_constraintStart_toEndOf="@+id/radioGroup2"
+        app:layout_constraintTop_toBottomOf="@+id/quiz_Second_Choice_TV"
+        tools:text="Africa" />
+
+    <TextView
+        android:id="@+id/quiz_Last_Choice_TV"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_50sdp"
+        android:background="@color/white"
+        android:gravity="start|center_vertical"
+        android:paddingStart="@dimen/_12sdp"
+        android:textSize="@dimen/_12sdp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/radioGroup2"
+        app:layout_constraintEnd_toEndOf="@+id/mainCard"
+        app:layout_constraintStart_toEndOf="@+id/radioGroup2"
+        app:layout_constraintTop_toBottomOf="@+id/quiz_Third_Choice_TV"
+        tools:text="Africa" />
+
+
+    <Button
+        android:id="@+id/nextQuiz_BTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/firstCard">
+        app:layout_constraintTop_toBottomOf="@+id/quiz_Last_Choice_TV" />
 
-        <TextView
-            android:id="@+id/stud_SecondAnswer"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:textSize="@dimen/_20sdp"
-            tools:text="Where is Egypt?" />
-    </androidx.cardview.widget.CardView>
-
-    <!--  ****************  -->
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/thirdCard"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_45sdp"
-        android:layout_margin="@dimen/_10sdp"
-        app:cardCornerRadius="@dimen/_4sdp"
-        app:cardElevation="@dimen/_8sdp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/secondCard">
-
-        <TextView
-            android:id="@+id/stud_ThirdAnswer"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:textSize="@dimen/_20sdp"
-            tools:text="Where is Egypt?" />
-    </androidx.cardview.widget.CardView>
-
-
-    <!--  ****************  -->
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/lastCard"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_45sdp"
-        android:layout_margin="@dimen/_10sdp"
-        app:cardCornerRadius="@dimen/_4sdp"
-        app:cardElevation="@dimen/_8sdp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/thirdCard">
-
-        <TextView
-            android:id="@+id/stud_LastAnswer"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:textSize="@dimen/_20sdp"
-            tools:text="Where is Egypt?" />
-    </androidx.cardview.widget.CardView>
-
+    <TextView
+        android:id="@+id/score_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/nextQuiz_BTN"
+        app:layout_constraintStart_toStartOf="@+id/radioGroup2"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

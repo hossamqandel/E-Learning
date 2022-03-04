@@ -61,6 +61,6 @@ public class StudentCourseQuizzesAdapter extends RecyclerView.Adapter<StudentCou
     }
 
     public interface OnClick {
-        void onItemClick(String name);
+        void onItemClick(String quizId);
     }
 }

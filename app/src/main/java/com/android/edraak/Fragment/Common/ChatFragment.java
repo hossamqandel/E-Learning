@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 
 import com.android.edraak.Adapter.Multi.ChatAdapter;
 import com.android.edraak.Model.ChatModel;
+import com.android.edraak.Model.UserModel;
 import com.android.edraak.R;
 import com.android.edraak.databinding.FragmentChatBinding;
 import com.google.firebase.auth.FirebaseAuth;
@@ -37,6 +39,7 @@ public class ChatFragment extends Fragment {
     DatabaseReference mDatabaseRef = FirebaseDatabase.getInstance().getReference();
     String userId = FirebaseAuth.getInstance().getUid();
     String courseId;
+    String userName;
 
     public ChatFragment() {
         // Required empty public constructor
@@ -62,11 +65,28 @@ public class ChatFragment extends Fragment {
         chatData(courseId);
     }
 
+    private String getUserName(){
+        mDatabaseRef.child("users").child(userId).addListenerForSingleValueEvent(new ValueEventListener() {
+            private static final String TAG = "java";
+
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                UserModel user = snapshot.getValue(UserModel.class);
+                userName = user.getFullName();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+        return userName;
+    }
 
     private void sendMessage(String courseId, String userId) {
         String message = binding.editTextTextPersonName.getText().toString().trim();
         if (!message.isEmpty()) {
-            mDatabaseRef.child("chats").child(courseId).push().setValue(new ChatModel(message, "", userId));
+            mDatabaseRef.child("chats").child(courseId).push().setValue(new ChatModel(message, getUserName(), userId));
             binding.editTextTextPersonName.setText("");
         }
         else {
